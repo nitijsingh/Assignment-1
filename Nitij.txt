@@ -1,7 +1,0 @@
-data('swiss')
-summary(swiss)
-hist(swiss$Fertility)
-hist(swiss$Fertility, breaks=6)
-#Print R session info
-sessionInfo()
-hist(swiss$Education)
