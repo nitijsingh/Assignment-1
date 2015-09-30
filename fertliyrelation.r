@@ -44,3 +44,6 @@ cor.test(swiss$Fertility, swiss$Agriculture)
 
 # Creating boxplot for relation between Fertility and Percentage of draftees receiving hightest mark on army examination
 plot(swiss$Fertility, swiss$Examination, main = 'Relation b/w Fertility and Percentage in army exam', xlab = 'Fertility', ylab = 'Percentage in army exam')
+
+# Dynamically linking the files for correlation 
+source('cor.r')
