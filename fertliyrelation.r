@@ -38,12 +38,9 @@ hist(swiss$Agriculture, col = "red", main = 'Percentage of males involved in agr
 # Creating an histogram between Provinces and Percenatage of draftees receiving highest maek on army examination
 hist(swiss$Examination, col = "green", main = 'Percentage of draftees receving highest marks', xlab = 'Percentage of highest mark on army examination'  )
 
-# Creating boxplot for relation between Fertility and Percentage of males involved in Agriculture
-plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Fertility and Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
-cor.test(swiss$Fertility, swiss$Agriculture)
+# Creating boxplot for relation between Infant mortality and Percentage of males involved in Agriculture
+plot(swiss$Infant.Mortality, swiss$Agriculture, main = 'Relation b/w Infant Mortality and Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
+cor.test(swiss$Infant.Mortality, swiss$Agriculture)
 
-# Creating boxplot for relation between Fertility and Percentage of draftees receiving hightest mark on army examination
-plot(swiss$Fertility, swiss$Examination, main = 'Relation b/w Fertility and Percentage in army exam', xlab = 'Fertility', ylab = 'Percentage in army exam')
 
-# Dynamically linking the files for correlation 
-source('cor.r')
+
