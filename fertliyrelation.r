@@ -60,4 +60,4 @@ cor.test(swiss$Fertility, swiss$Agriculture)
 
 #############################################################
 # Explaining the results of correlation             
-# There is a 
+# There is a postive
