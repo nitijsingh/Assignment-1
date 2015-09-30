@@ -40,7 +40,21 @@ hist(swiss$Examination, col = "green", main = 'Percentage of draftees receving h
 
 # Creating boxplot for relation between Infant mortality and Percentage of males involved in Agriculture
 plot(swiss$Infant.Mortality, swiss$Agriculture, main = 'Relation b/w Infant Mortality and Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
+
+# Checking corelation between Infant mortality and Agriculture 
 cor.test(swiss$Infant.Mortality, swiss$Agriculture)
 
-
+#############################################################
+# Displaying results of the correlation                     #  
+#Pearson's product-moment correlation                       #
+#                                                           #
+#data:  swiss$Infant.Mortality and swiss$Agriculture        #
+#t = -0.40901, df = 45, p-value = 0.6845                    #
+#alternative hypothesis: true correlation is not equal to 0 #
+#95 percent confidence interval:                            #
+#  -0.3420476  0.2303336                                    #
+#sample estimates:                                          #
+#  cor                                                      #  
+# -0.06085861                                               #
+#############################################################
 
