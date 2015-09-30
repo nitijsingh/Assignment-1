@@ -1,0 +1,25 @@
+##############################################################
+# Introduction to collaborative social science data analysis 
+# By Christopher Gandrud  
+# Date - 26th September 2015
+# Assigment 1
+# Question????????
+# By- Alessia D' Alessandro and Nitij Singh
+# Date of Submission - 
+##############################################################
+# Print R session Info
+sessionInfo()
+# Listing of the all the data sets available with R Studio
+data()
+#Load data set World Phones
+data("WorldPhones")
+# Viewing information of World Phones data set
+?WorldPhones
+# Summary of the data set for viewing the central tendency 
+summary(WorldPhones)
+# List the variables in the data set
+names(WorldPhones)
+#Coverting the data into dataframe
+wp= as.data.frame(WorldPhones)
+hist(wp$Asia)
+
