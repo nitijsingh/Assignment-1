@@ -2,7 +2,7 @@
 # Introduction to collaborative social science data analysis 
 # By Christopher Gandrud  
 # Date - 26th September 2015
-# Assigment 1
+# Assignment 1
 # Question????????
 # By- Alessia D' Alessandro and Nitij Singh
 # Date of Submission - 
