@@ -39,7 +39,8 @@ hist(swiss$Agriculture, col = "red", main = 'Percentage of males involved in agr
 hist(swiss$Examination, col = "green", main = 'Percentage of draftees receving highest marks', xlab = 'Percentage of highest mark on army examination'  )
 
 # Creating boxplot for relation between Fertility and Percentage of males involved in Agriculture
-plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Infant Mortality and Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
+plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Infant Mortality and 
+    Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
 
 # Checking corelation between Fertility and Agriculture 
 cor.test(swiss$Fertility, swiss$Agriculture)
