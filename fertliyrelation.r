@@ -83,5 +83,6 @@ ggplot(swiss,aes(Fertility,Examination)) + geom_point()
 # sample estimates:
 #  cor 
 # -0.6458827 
+# Hence it proves our hypothesis that occupation has an effect on the Fertility.
 ######################
 
