@@ -7,7 +7,7 @@
  By- Alessia D' Alessandro and Nitij Singh                                        
  Date of Submission - 2nd OCtober 2015  
 
-# "The first pair assignment is designed to develop your understanding of file structures, version control, and basic R data structures and descriptive statistics". Tasks:
+# Task
 
 Each pair will create a new public GitHub repository. The repository should be fully documented, including with a descriptive README.md file.
 
@@ -17,7 +17,7 @@ At least one file must dynamically link to another in a substantively meaningful
 
 Finally, another pair must make a pull request and it should be discussed and merged.
 
-# Data sets used 
+# Introduction
 
 In first part of the assignment with have used the swiss data set in order to understand the relation between occupation and fertility which leads to demographic changes in the swiss society.
 
@@ -25,7 +25,7 @@ In the second data set we have used the women data set in order to understand th
 
 # Name of the files in the repository 
 1. Data set swiss - 'fertilityrelation.r' and dynamic linkage with 'cor.r'
-2. Data set women
+2. Data set women - 'collaborative assignment1.R'
 
 
 # Result 
