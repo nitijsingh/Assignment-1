@@ -1,2 +1,5 @@
-# Creating boxplot for relation between Fertility and Percentage of draftees receiving highest mark on army examination
-plot (swiss$Fertility, swiss$Examination)
+# Creating boxplot for relation between Fertility and Percentage of males involved in Army
+library(ggplot2)
+plot (swiss$Fertility, swiss$Examination, col= "red", main ='Relation B/W Fertility and males involved in Army', xlab = 'Fertility', ylab = 'Marks')
+ggplot(swiss,aes(Examination,Fertility)) + geom_point()
+
