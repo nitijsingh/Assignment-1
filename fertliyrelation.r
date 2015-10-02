@@ -39,26 +39,32 @@ hist(swiss$Agriculture, col = "red", main = 'Percentage of males involved in agr
 hist(swiss$Examination, col = "green", main = 'Percentage of draftees receving highest marks', xlab = 'Percentage of highest mark on army examination'  )
 
 # Creating boxplot for relation between Fertility and Percentage of males involved in Agriculture
-plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Infant Mortality and 
-    Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
+plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Fertility and Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
 
 # Checking corelation between Fertility and Agriculture 
 cor.test(swiss$Fertility, swiss$Agriculture)
 
-#############################################################
-#          Pearson's product-moment correlation
-#
-# data:  swiss$Fertility and swiss$Agriculture
-# t = 2.5316, df = 45, p-value = 0.01492
-# alternative hypothesis: true correlation is not equal to 0
-# 95 percent confidence interval:
-#  0.07334947 0.58130587
-# sample estimates:
-#  cor 
-# 0.3530792 
+# Creating GGPlot for Fertility and Agriculture 
+ggplot(swiss,aes(Fertility,Agriculture)) + geom_smooth()
+
+###############################################################
+#          Pearson's product-moment correlation               #
+#                                                             #
+# data:  swiss$Fertility and swiss$Agriculture                #
+# t = 2.5316, df = 45, p-value = 0.01492                      #
+# alternative hypothesis: true correlation is not equal to 0  #
+# 95 percent confidence interval:                             #
+#  0.07334947 0.58130587                                      #
+# sample estimates:                                           #
+#  cor                                                        #
+# 0.3530792                                                   #
 ###############################################################
 #############################################################
 
 #############################################################
-# Explaining the results of correlation             
-# There is a postive
+# Explaining the results of correlation                     #
+# There is a postive effect of percentage of males employed #
+# on the fertility rate                                     # 
+#############################################################
+
+
