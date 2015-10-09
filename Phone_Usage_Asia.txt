@@ -2,7 +2,7 @@
 # Introduction to collaborative social science data analysis 
 # By Christopher Gandrud  
 # Date - 26th September 2015
-# Assignment 1
+# Assigment 1
 # Question????????
 # By- Alessia D' Alessandro and Nitij Singh
 # Date of Submission - 
@@ -21,5 +21,5 @@ summary(WorldPhones)
 names(WorldPhones)
 #Coverting the data into dataframe
 wp= as.data.frame(WorldPhones)
-hist(wp$Asia)
+pie(wp$Asia , main = "Phone Usage Growth in Europe")
 
