@@ -1,6 +1,6 @@
 ---
 title: "Assignment2"
-author: "Nitij"
+author: " Alessia/Nitij"
 date: "22 October 2015"
 output: html_document
 bibliography: Biblio.bib
