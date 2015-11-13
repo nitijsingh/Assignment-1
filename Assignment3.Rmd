@@ -1,0 +1,108 @@
+---
+title: "Impact of ICT on GDP in Developed, Emerging and Developing Countries"
+author: "Alessia and Nitij"
+date: "13 November 2015"
+output: pdf_document
+bibliography: Biblio.bib
+---
+# Abstract 
+This paper analyzes the impact of Information and Communication Technology (ICT) on economic growth in developed, developing and emerging markets. The central question of the study is whether the gains from investments in ICT are different between the developed, developing and emerging markets. It is based on a sample of 58 countries for the period 1995 to 2010. From the initial descriptive statistic we observe that investment in ICT is higher in emerging economies as compared to developed and developing economies.
+
+# Introduction
+In a rapidly changing world, societies have experienced a paradigm shift of how things used to be done to new ways, which have been enabled by the use of Information and Communication Technology (ICT). ICT has made world to a small village with better living standards. Improved standards of living usually correlate with productivity growth[@timmer2010economic] 
+
+As a matter of fact, some of the developing and emerging markets have become major engines of global growth however there is little evidence on the effective contribution that ICT investments have on economic performance for these sub- categories. On the other hand, this relationship has been extensively studied in the firm, industry and country level for developed countries with a majority of studies and panel regressions confirming the positive relationship between ICT capital and GDP growth[@cardona2013ict]
+
+Different methodologies can be applied for the study of the impact of ICT on GDP percentage growth, however it might be important to distinguish why the impact differs between developed, developing and emerging countries. Lacking micro and macro level data sets in developing and emerging nations could be a reason explanation the little evidence. Lacking absorptive capacities such as appropriate levels of human capital or insufficient funding for conducting research and development are all valid factors to consider when studying the effect of ICT in these different country classifications. On the other hand, it is often the case that ICT is referred to as a catalyst for innovation and modernization, lowering transaction costs, blurring boundaries and spreading information that will make societies better off.  The World Bank for instance, states highly ambitious expectations for the development of ICT infrastructure in developing and emerging nations, associating ICT investments with reduced poverty rates, increased productivity rates, improve accountability and governance and overall boosting economic growth[@world2012world].The International Institute for Sustainable Development defines ICT as an enabler for sustainable development across many sectors, ranging from farming, foresting to energy efficiency and education. United Nations ICT Taskforce has identified ICT as key tool to enable economic growth in developing countries offering these the unique opportunity to leapfrog certain stages of development by the use of technologies that undergo the traditional stages of progress to the information society[@force2003tools]
+
+In the following section we define the variables used in the study, data source, methodology and timeline
+
+# Definition of key variables #
+## Country Categorization ##
+The country groups are based on GDP per capita in purchasing power parity (PPP) adjusted US Dollars of 2013. So countries with less that 6,500 2013 US dollar GDP per capita are classified as developing countries and all countries above 23,000 2013 dollar are developed countries. The countries between 6,500 and 23,000 are defined as emerging countries.
+## GDP growth ##
+The sum of the final uses of goods and services are measured in Purchasing Power Parity (PPP) expressed in 2013 U.S dollars.
+## ICT##
+The acronym ICT stands for Information Communication Technology. We define ICT as the acquisition of equipment and computer software that provide access to information through telecommunication. For the purpose of this study we will only look at 2 communication technologies, the Internet and cell phones as we assume these to be key drivers in the boosting economic growth.
+## ICT Capital service growth ##
+Defined as the change in the flow of productive services provided by ICT assets. We focus on three types of ICT assets namely computer hardware and equipment, telecommunication equipment, and computer software and services. The underlying capital stock series are calculated from the investment data using the perpetual inventory method. The aggregation of the growth in capital services over the different asset types is calculated using the user cost approach.
+##	Non ICT Capital Service growth ##
+Refers to the change in the flow of productive services provided by non-ICT assets. Three types of non-ICT assets are included—transport equipment; plant, machinery, and other non-ICT equipment; and construction, building and other structures. The underlying capital stock series are calculated from the investment data using the perpetual inventory method. The aggregation of the growth in capital services over the different asset types is calculated using the user cost approach.	
+##	Contribution Labor Quality ##
+The quality of labor captures the hetrogeneity among the labour force. 
+## 	Contribution Labor Quantity ##
+Different definition based on the country location. In advanced economies it is the growth rate of total hours worked. In developing and emerging countries it is the employment growth rate. These methodologies do not differ as long as the average hours worked per person stay consistent over time
+# Capital and Labor Input variables ##
+For the purpose of our study we focus on capital services rather than capital stocks. As emphasized by Inklaar and Timmer[@timmer2010economic].“A capital services measure would reflect that shorter lived assets have a larger return in production, as indicated by the user cost of capital of each asset”. For the calculation of ICT capital services as well as non-ICT capital services we use the growth rates of the stocks of the single assets (information technology equipment, communication technology equipment and software for ICT) weighted by their factor shares in total ICT (non-ICT) capital compensation. The labor input variable is the growth rate of labor services calculated as the sum of the growth rate of the labor composition index and the growth rate of labor quantity. Labor composition includes the growth rate of the share of different skill-level groupings in the labor force weighted by their share in total labor compensation. A significant limitation for our study is the inexistence of data for labor compensation which might affect the comparison between the output elasticity of ICS and the growth accounting base ICT compensation share. Moreover the definition of labor compensation itself is not unanimous between countries: in advanced economies it is the growth rate of the total hours worked whereas in developing countries it reflects the employment growth rate. 
+
+# Method #
+Our study is centered on the use of two key datasets: the Total Economy Database (TED) as a primary data source and the World Bank Development Indicators (WDI) for the study of the control variables. The TED dataset contains annual data for GDP, ICT and non ICT Capital Service and labor services for 123 countries with a timeframe ranging from 1990 to 2013.
+
+## Outlier Detection ##
+The total economy database is the primary data base used in our study. During the visual observation we dropped 75 countries from the data set as there were missing data with regards to ICT capital investment. Maximum countries dropped were from the developing countries category as getting quality with regards to ICT is still challenge in middle and low income countries. 
+
+## Methodolgy ##
+The data gathered was arranged into a pannel format for descriptive statistic and understand the pattern of ICT investing in all the categories-
+
+```{r}
+#Uploading the data set
+d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
+#Creating separate table for developed countries
+d1<-subset(d,d$D.E.De == 1)
+#View the new table
+View(d1)
+# Dropping the variable country name
+d1$X<-NULL
+# Dropping the variable years
+d1$X.1<-NULL
+#Summary Statisitc of Developed Countries
+summary(d1)
+#Creating separate table for emerging countries
+d2<-subset(d,d$D.E.De == 2)
+#Viewing the new table
+View(d2)
+#Dropping the variable country name
+d2$X<-NULL
+#Dropping the variable years
+d2$X.1<-NULL
+##Summary statisitc of Emerging Countries
+summary(d2)
+#Creating separate table for developing countries
+d3<-subset(d,d$D.E.De == 3)
+#Dropping the variables country name
+d3$X<-NULL
+#Dropping the variable year
+d3$X.1<-NULL
+#Summary statistics of Developing countries 
+summary(d3)
+```
+#Explaining the results #
+1. The table above shows that investment in ICT capital service is higher in emerging countries as compared to developed and developing countries.
+2. Non- ICT Capital is higher in emerging and developing countries.
+3. Contribution of ICT to GDP is higher in developing and emerging countries 
+4. Contributiopn of ICT Non ICT in GDP is higher in developing economies 
+5. People tend to have higher working hours in developing countries as compared to developed and emerging countries
+
+#Future Steps 
+In order to understand the effect of ICT capital on GDP growth among developed, developed and emerging countries we plan run two models- i) Logistic Regression Model ii) Fixed Effect Model. The following would the question used in our model
+
+![alt text](Equation.png "")
+
+Dependent variable - GDP Growth
+Independent variable - ICT Capital Services, Non ICT Capital Services, Labour services, ICT contributon into GDP, Non ICT contribution in GDP
+
+Control Variable - Export percentage of GDP - Data will be gathered from World Bank indicator 
+                   Dummy time will be used for year 2008-2009 in order to control for the effect of the recession 
+                  
+                 
+#Final Product
+The website will have a dynamic graph displaying a timeline of ICT capital services in emerging and developing countries
+
+
+
+
+
+
+
+
+

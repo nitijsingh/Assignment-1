@@ -1,8 +1,8 @@
 ---
 title: "Assignment2"
-author: " Alessia/Nitij"
+author: ' Alessia/Nitij'
 date: "22 October 2015"
-output: html_document
+output: word_document
 bibliography: Biblio.bib
 ---
 #Background
@@ -71,6 +71,5 @@ New microwork plattforms, developed by companies like oDesk, Amazon and Samasour
 
 # Final Product 
 The final prodct of the project will be a dynamic map of BRICS nations; with time series effect of ICT on each country and also determine which sub component of ICT has the maximum impact on GDP of each individual countries in BRICS.
-
 
 #Reference
