@@ -1,6 +1,6 @@
 # Assignment-3 Introduction to collaborative social science data analysis                       
  By Christopher Gandrud                                                           
- Date - 13th September 2015                                                       
+ Date - 13th November 2015                                                       
  Assigment 3                                                                     
  Topic-    The impact of Information and Communication Technology (ICT) on economic growth in developed, developing and emerging markets
   By- Alessia D' Alessandro and Nitij Singh                                        
@@ -24,7 +24,7 @@ To better comprehend the results of the study it is important to define key vari
 7.	ICT Capital Services growth:  Defined as the change in the flow of productive services provided by ICT assets. We focus on three types of ICT assets namely computer hardware and equipment, telecommunication equipment, and computer software and services. The underlying capital stock series are calculated from the investment data using the perpetual inventory method. The aggregation of the growth in capital services over the different asset types is calculated using the user cost approach.
 8.	Non ICT Capital Service growth: Refers to the change in the flow of productive services provided by non-ICT assets. Three types of non-ICT assets are included—transport equipment; plant, machinery, and other non-ICT equipment; and construction, building and other structures. The underlying capital stock series are calculated from the investment data using the perpetual inventory method. The aggregation of the growth in capital services over the different asset types is calculated using the user cost approach.	
 # Data Set
-Total Economy Indicator 
+Total Economy Indicator and
 World Development Index
 .
 
