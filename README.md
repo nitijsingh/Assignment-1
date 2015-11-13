@@ -25,7 +25,7 @@ To better comprehend the results of the study it is important to define key vari
 8.	Non ICT Capital Service growth: Refers to the change in the flow of productive services provided by non-ICT assets. Three types of non-ICT assets are included—transport equipment; plant, machinery, and other non-ICT equipment; and construction, building and other structures. The underlying capital stock series are calculated from the investment data using the perpetual inventory method. The aggregation of the growth in capital services over the different asset types is calculated using the user cost approach.	
 # Data Set
 Total Economy Indicator and
-World Development Index
+World Bank Data set
 .
 
 
