@@ -89,15 +89,13 @@ summary(d1)</code></pre>
 ##  Mean   :1   Mean   : 2.307   Mean   : 0.3683   Mean   : 0.8325  
 ##  3rd Qu.:1   3rd Qu.: 3.700   3rd Qu.: 0.5316   3rd Qu.: 1.9577  
 ##  Max.   :1   Max.   :10.234   Max.   : 1.6147   Max.   : 5.6898  
-##                                                                  
-##   ICT.Capital       NICT.Capital      Cl.Quality              Cl.Quant  
-##  Min.   : 0.5678   Min.   :-2.459   Min.   :-0.8349   -0.005051575:  1  
-##  1st Qu.: 7.9922   1st Qu.: 1.482   1st Qu.: 0.1181   -0.011881914:  1  
-##  Median :11.3690   Median : 2.182   Median : 0.1900   -0.020699907:  1  
-##  Mean   :11.1155   Mean   : 2.324   Mean   : 0.2296   -0.036002317:  1  
-##  3rd Qu.:14.0709   3rd Qu.: 2.880   3rd Qu.: 0.3420   -0.039768842:  1  
-##  Max.   :24.4539   Max.   : 7.957   Max.   : 1.0359   -0.051124505:  1  
-##                                                       (Other)     :298  
+##   ICT.Capital       NICT.Capital      Cl.Quality         Cl.Quant       
+##  Min.   : 0.5678   Min.   :-2.459   Min.   :-0.8349   Min.   :-6.26626  
+##  1st Qu.: 7.9922   1st Qu.: 1.482   1st Qu.: 0.1181   1st Qu.:-0.06874  
+##  Median :11.3690   Median : 2.182   Median : 0.1900   Median : 0.60905  
+##  Mean   :11.1155   Mean   : 2.324   Mean   : 0.2296   Mean   : 0.49789  
+##  3rd Qu.:14.0709   3rd Qu.: 2.880   3rd Qu.: 0.3420   3rd Qu.: 1.24928  
+##  Max.   :24.4539   Max.   : 7.957   Max.   : 1.0359   Max.   : 3.20281  
 ##    ContriICT         ContriNICT     
 ##  Min.   :0.02453   Min.   :-0.7256  
 ##  1st Qu.:0.33692   1st Qu.: 0.4360  
@@ -105,7 +103,13 @@ summary(d1)</code></pre>
 ##  Mean   :0.54836   Mean   : 0.7778  
 ##  3rd Qu.:0.73754   3rd Qu.: 0.9742  
 ##  Max.   :1.32499   Max.   : 3.0919  
-## </code></pre>
+##  Export.of.goods.and.services....of.GDP.
+##  Min.   : 9.038                         
+##  1st Qu.:25.354                         
+##  Median :36.226                         
+##  Mean   :36.643                         
+##  3rd Qu.:44.418                         
+##  Max.   :96.588</code></pre>
 <pre class="r"><code>#Creating separate table for emerging countries
 d2&lt;-subset(d,d$D.E.De == 2)
 #Viewing the new table
@@ -116,30 +120,34 @@ d2$X&lt;-NULL
 d2$X.1&lt;-NULL
 ##Summary statisitc of Emerging Countries
 summary(d2)</code></pre>
-<pre><code>##      D.E.De    GDP.Growth         Lab.Qual         Lab.Quant       
-##  Min.   :2   Min.   :-11.426   Min.   :-2.7864   Min.   :-11.9105  
-##  1st Qu.:2   1st Qu.:  1.610   1st Qu.: 0.2345   1st Qu.: -0.4425  
-##  Median :2   Median :  3.878   Median : 0.4328   Median :  1.4046  
-##  Mean   :2   Mean   :  3.346   Mean   : 0.4657   Mean   :  1.2821  
-##  3rd Qu.:2   3rd Qu.:  5.612   3rd Qu.: 0.6217   3rd Qu.:  3.0000  
-##  Max.   :2   Max.   : 16.794   Max.   : 4.4470   Max.   : 16.5887  
-##                                                                    
-##   ICT.Capital        NICT.Capital      Cl.Quality              Cl.Quant  
-##  Min.   : 0.09741   Min.   :-1.945   Min.   :-2.0512   #N/A        : 16  
-##  1st Qu.:10.60355   1st Qu.: 1.995   1st Qu.: 0.1071   -0.026004581:  1  
-##  Median :16.42471   Median : 3.500   Median : 0.2090   -0.051332603:  1  
-##  Mean   :16.60128   Mean   : 3.768   Mean   : 0.2469   -0.054426707:  1  
-##  3rd Qu.:22.20121   3rd Qu.: 5.123   3rd Qu.: 0.3232   -0.055708771:  1  
-##  Max.   :40.35037   Max.   :13.969   Max.   : 3.2197   -0.0559251  :  1  
-##                                                        (Other)     :331  
+<pre><code>##      D.E.De    GDP.Growth         Lab.Qual         Lab.Quant      
+##  Min.   :2   Min.   :-11.426   Min.   :-2.7864   Min.   :-11.910  
+##  1st Qu.:2   1st Qu.:  1.793   1st Qu.: 0.2281   1st Qu.: -0.443  
+##  Median :2   Median :  3.931   Median : 0.4248   Median :  1.358  
+##  Mean   :2   Mean   :  3.354   Mean   : 0.4584   Mean   :  1.228  
+##  3rd Qu.:2   3rd Qu.:  5.565   3rd Qu.: 0.6386   3rd Qu.:  2.850  
+##  Max.   :2   Max.   : 10.148   Max.   : 4.4470   Max.   : 16.589  
+##   ICT.Capital        NICT.Capital      Cl.Quality          Cl.Quant      
+##  Min.   : 0.09741   Min.   :-1.790   Min.   :-2.05119   Min.   :-4.8904  
+##  1st Qu.:11.57976   1st Qu.: 2.280   1st Qu.: 0.08582   1st Qu.:-0.2250  
+##  Median :16.62387   Median : 3.639   Median : 0.21221   Median : 0.6730  
+##  Mean   :17.02244   Mean   : 4.000   Mean   : 0.24183   Mean   : 0.5562  
+##  3rd Qu.:22.23989   3rd Qu.: 5.259   3rd Qu.: 0.33372   3rd Qu.: 1.3740  
+##  Max.   :40.35037   Max.   :13.969   Max.   : 3.21971   Max.   : 5.5855  
 ##    ContriICT           ContriNICT     
-##  Min.   :-0.003895   Min.   :-1.1190  
-##  1st Qu.: 0.354109   1st Qu.: 0.7937  
-##  Median : 0.575092   Median : 1.4061  
-##  Mean   : 0.696091   Mean   : 1.6367  
-##  3rd Qu.: 0.887822   3rd Qu.: 2.2452  
-##  Max.   : 4.388306   Max.   : 6.4375  
-## </code></pre>
+##  Min.   :-0.003895   Min.   :-1.0760  
+##  1st Qu.: 0.404869   1st Qu.: 0.9215  
+##  Median : 0.613752   Median : 1.5248  
+##  Mean   : 0.722123   Mean   : 1.6892  
+##  3rd Qu.: 0.924292   3rd Qu.: 2.2489  
+##  Max.   : 2.561978   Max.   : 5.0004  
+##  Export.of.goods.and.services....of.GDP.
+##  Min.   :  6.706                        
+##  1st Qu.: 23.967                        
+##  Median : 33.846                        
+##  Mean   : 40.620                        
+##  3rd Qu.: 53.078                        
+##  Max.   :121.312</code></pre>
 <pre class="r"><code>#Creating separate table for developing countries
 d3&lt;-subset(d,d$D.E.De == 3)
 #Dropping the variables country name
@@ -155,15 +163,13 @@ summary(d3)</code></pre>
 ##  Mean   :3   Mean   :  4.872   Mean   : 0.2603   Mean   :  2.788  
 ##  3rd Qu.:3   3rd Qu.:  6.137   3rd Qu.: 0.3435   3rd Qu.:  3.907  
 ##  Max.   :3   Max.   : 19.349   Max.   : 0.7314   Max.   : 20.593  
-##                                                                   
-##   ICT.Capital       NICT.Capital       Cl.Quality               Cl.Quant  
-##  Min.   :-0.4625   Min.   :-0.4561   Min.   :-0.06235   2.355307713 :  9  
-##  1st Qu.:11.2184   1st Qu.: 2.4931   1st Qu.: 0.06817   1.423988678 :  5  
-##  Median :15.5674   Median : 3.4708   Median : 0.14361   -0.004049758:  1  
-##  Mean   :17.1562   Mean   : 4.3258   Mean   : 0.12141   -0.005843171:  1  
-##  3rd Qu.:22.1123   3rd Qu.: 5.8583   3rd Qu.: 0.16369   -0.115346734:  1  
-##  Max.   :43.7080   Max.   :11.2052   Max.   : 0.30076   -0.15710115 :  1  
-##                                                         (Other)     :254  
+##   ICT.Capital       NICT.Capital       Cl.Quality          Cl.Quant      
+##  Min.   :-0.4625   Min.   :-0.4561   Min.   :-0.06235   Min.   :-9.3315  
+##  1st Qu.:11.2184   1st Qu.: 2.4931   1st Qu.: 0.06817   1st Qu.: 0.7133  
+##  Median :15.5674   Median : 3.4708   Median : 0.14361   Median : 1.2593  
+##  Mean   :17.1562   Mean   : 4.3258   Mean   : 0.12141   Mean   : 1.3639  
+##  3rd Qu.:22.1123   3rd Qu.: 5.8583   3rd Qu.: 0.16369   3rd Qu.: 1.9813  
+##  Max.   :43.7080   Max.   :11.2052   Max.   : 0.30076   Max.   :10.9890  
 ##    ContriICT          ContriNICT     
 ##  Min.   :-0.01064   Min.   :-0.2892  
 ##  1st Qu.: 0.34028   1st Qu.: 1.1429  
@@ -171,8 +177,331 @@ summary(d3)</code></pre>
 ##  Mean   : 0.77307   Mean   : 2.0708  
 ##  3rd Qu.: 0.89637   3rd Qu.: 2.8490  
 ##  Max.   : 8.38740   Max.   : 6.3529  
-## </code></pre>
-<p>library(googleVis))</p>
+##  Export.of.goods.and.services....of.GDP.
+##  Min.   : 9.707                         
+##  1st Qu.:19.875                         
+##  Median :26.441                         
+##  Mean   :28.232                         
+##  3rd Qu.:35.669                         
+##  Max.   :56.506</code></pre>
+<pre class="r"><code>#Installing plm package 
+# Loading the pannel data package in the memory
+library(plm)</code></pre>
+<pre><code>## Loading required package: Formula</code></pre>
+<pre class="r"><code># Loading the formula package in the memory 
+library(Formula)
+# Attaching data set for developed countries
+d4&lt;-subset(d,d$D.E.De == 1)
+attach(d4)
+d4$X&lt;-NULL
+# Defining dependent and indenpendt variable
+Y &lt;- cbind(d4$GDP.Growth)
+X &lt;- cbind(d4$ContriICT, d4$ContriNICT)
+# Descriptive statistics
+summary(Y)</code></pre>
+<pre><code>##        V1        
+##  Min.   :-8.631  
+##  1st Qu.: 1.528  
+##  Median : 2.582  
+##  Mean   : 2.307  
+##  3rd Qu.: 3.700  
+##  Max.   :10.234</code></pre>
+<pre class="r"><code>summary(X)</code></pre>
+<pre><code>##        V1                V2         
+##  Min.   :0.02453   Min.   :-0.7256  
+##  1st Qu.:0.33692   1st Qu.: 0.4360  
+##  Median :0.52180   Median : 0.6500  
+##  Mean   :0.54836   Mean   : 0.7778  
+##  3rd Qu.:0.73754   3rd Qu.: 0.9742  
+##  Max.   :1.32499   Max.   : 3.0919</code></pre>
+<pre class="r"><code># Set data as pannel data
+pdata &lt;- plm.data(d4,index=c(&quot;D.E.De&quot;, &quot;X.1&quot;))</code></pre>
+<pre><code>## serie D.E.De  is constant and has been removed</code></pre>
+<pre class="r"><code># Pooled OLS Estimater 
+pooling &lt;- plm(Y ~ X, data=pdata, model= &quot;pooling&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(pooling)</code></pre>
+<pre><code>## Oneway (individual) effect Pooling Model
+## 
+## Call:
+## plm(formula = Y ~ X, data = pdata, model = &quot;pooling&quot;)
+## 
+## Unbalanced Panel: n=16, T=19-19, N=304
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -10.200  -0.696   0.300   1.120   4.680 
+## 
+## Coefficients :
+##             Estimate Std. Error t-value  Pr(&gt;|t|)    
+## (Intercept) 0.015952   0.275789  0.0578    0.9539    
+## X1          1.740230   0.435956  3.9918 8.246e-05 ***
+## X2          1.718388   0.220382  7.7973 1.042e-13 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    1731
+## Residual Sum of Squares: 1284.2
+## R-Squared      :  0.25809 
+##       Adj. R-Squared :  0.25554 
+## F-statistic: 52.3552 on 2 and 301 DF, p-value: &lt; 2.22e-16</code></pre>
+<pre class="r"><code># Fixed effect modeling 
+fixed &lt;- plm(Y ~ X, data=pdata, model= &quot;within&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(fixed)</code></pre>
+<pre><code>## Oneway (individual) effect Within Model
+## 
+## Call:
+## plm(formula = Y ~ X, data = pdata, model = &quot;within&quot;)
+## 
+## Unbalanced Panel: n=16, T=19-19, N=304
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -10.900  -0.684   0.199   1.220   4.240 
+## 
+## Coefficients :
+##    Estimate Std. Error t-value  Pr(&gt;|t|)    
+## X1  1.17744    0.55039  2.1393   0.03326 *  
+## X2  2.35402    0.29447  7.9941 3.247e-14 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    1620.2
+## Residual Sum of Squares: 1186.4
+## R-Squared      :  0.26776 
+##       Adj. R-Squared :  0.25191 
+## F-statistic: 52.2925 on 2 and 286 DF, p-value: &lt; 2.22e-16</code></pre>
+<pre class="r"><code># Putting control variable for Export % of GDP
+Y1 &lt;- cbind(d4$GDP.Growth)
+X1 &lt;- cbind(d4$ContriICT, d4$ContriNICT, d4$Export.of.goods.and.services....of.GDP.)
+# Pooled OLS Esitmater with control variable for developed countries 
+pool &lt;- plm(Y1 ~ X1, data=pdata, model= &quot;pool&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(pool)</code></pre>
+<pre><code>## Oneway (individual) effect Pooling Model
+## 
+## Call:
+## plm(formula = Y1 ~ X1, data = pdata, model = &quot;pool&quot;)
+## 
+## Unbalanced Panel: n=16, T=19-19, N=304
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -10.200  -0.656   0.322   1.140   4.330 
+## 
+## Coefficients :
+##               Estimate Std. Error t-value  Pr(&gt;|t|)    
+## (Intercept) -0.3149601  0.3408630 -0.9240 0.3562249    
+## X11          1.6511962  0.4380934  3.7691 0.0001973 ***
+## X12          1.6728464  0.2215031  7.5522 5.192e-13 ***
+## X13          0.0113297  0.0068949  1.6432 0.1013905    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    1731
+## Residual Sum of Squares: 1272.8
+## R-Squared      :  0.26471 
+##       Adj. R-Squared :  0.26123 
+## F-statistic: 36.0007 on 3 and 300 DF, p-value: &lt; 2.22e-16</code></pre>
+<pre class="r"><code># Attaching data set for emerging countries
+d5&lt;-subset(d,d$D.E.De == 2)
+attach(d5)</code></pre>
+<pre><code>## The following object is masked _by_ .GlobalEnv:
+## 
+##     X
+## 
+## The following objects are masked from d4:
+## 
+##     Cl.Quality, Cl.Quant, ContriICT, ContriNICT, D.E.De,
+##     Export.of.goods.and.services....of.GDP., GDP.Growth,
+##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, X, X.1</code></pre>
+<pre class="r"><code>d5$X&lt;-NULL
+# Defining dependent and indenpendt variable
+Y2 &lt;- cbind(d5$GDP.Growth)
+X2 &lt;- cbind(d5$ContriICT, d5$ContriNICT)
+# Descriptive statistics
+summary(Y2)</code></pre>
+<pre><code>##        V1         
+##  Min.   :-11.426  
+##  1st Qu.:  1.793  
+##  Median :  3.931  
+##  Mean   :  3.354  
+##  3rd Qu.:  5.565  
+##  Max.   : 10.148</code></pre>
+<pre class="r"><code>summary(X2)</code></pre>
+<pre><code>##        V1                  V2         
+##  Min.   :-0.003895   Min.   :-1.0760  
+##  1st Qu.: 0.404869   1st Qu.: 0.9215  
+##  Median : 0.613752   Median : 1.5248  
+##  Mean   : 0.722123   Mean   : 1.6892  
+##  3rd Qu.: 0.924292   3rd Qu.: 2.2489  
+##  Max.   : 2.561978   Max.   : 5.0004</code></pre>
+<pre class="r"><code># Set data as pannel data
+pdata &lt;- plm.data(d5,index=c(&quot;D.E.De&quot;, &quot;X.1&quot;))</code></pre>
+<pre><code>## serie D.E.De  is constant and has been removed</code></pre>
+<pre class="r"><code># Pooled OLS Estimater 
+pooling &lt;- plm(Y2 ~ X2, data=pdata, model= &quot;pooling&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(pooling)</code></pre>
+<pre><code>## Oneway (individual) effect Pooling Model
+## 
+## Call:
+## plm(formula = Y2 ~ X2, data = pdata, model = &quot;pooling&quot;)
+## 
+## Unbalanced Panel: n=16, T=18-18, N=288
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -13.100  -1.260   0.451   2.010   8.290 
+## 
+## Coefficients :
+##             Estimate Std. Error t-value  Pr(&gt;|t|)    
+## (Intercept)  0.72337    0.42587  1.6986  0.090491 .  
+## X21          1.19629    0.40872  2.9269  0.003699 ** 
+## X22          1.04567    0.16753  6.2418 1.563e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    3595.1
+## Residual Sum of Squares: 3027.1
+## R-Squared      :  0.15801 
+##       Adj. R-Squared :  0.15636 
+## F-statistic: 26.741 on 2 and 285 DF, p-value: 2.2729e-11</code></pre>
+<pre class="r"><code># Putting control variable for Export % of GDP
+Y3 &lt;- cbind(d5$GDP.Growth)
+X3 &lt;- cbind(d5$ContriICT, d5$ContriNICT, d5$Export.of.goods.and.services....of.GDP.)
+# Pooled OLS Esitmater with control variable for developed countries 
+pooling &lt;- plm(Y3 ~ X3, data=pdata, model= &quot;pooling&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(pooling)</code></pre>
+<pre><code>## Oneway (individual) effect Pooling Model
+## 
+## Call:
+## plm(formula = Y3 ~ X3, data = pdata, model = &quot;pooling&quot;)
+## 
+## Unbalanced Panel: n=16, T=18-18, N=288
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -13.100  -1.080   0.499   1.870   8.620 
+## 
+## Coefficients :
+##              Estimate Std. Error t-value  Pr(&gt;|t|)    
+## (Intercept) 0.0884727  0.5321355  0.1663  0.868071    
+## X31         1.0689291  0.4117564  2.5960  0.009922 ** 
+## X32         1.0902521  0.1682095  6.4815 4.004e-10 ***
+## X33         0.0160406  0.0081328  1.9723  0.049542 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    3595.1
+## Residual Sum of Squares: 2986.2
+## R-Squared      :  0.16938 
+##       Adj. R-Squared :  0.16703 
+## F-statistic: 19.3048 on 3 and 284 DF, p-value: 2.0248e-11</code></pre>
+<pre class="r"><code># Attaching data set for developing countries
+d6&lt;-subset(d,d$D.E.De == 3)
+attach(d6)</code></pre>
+<pre><code>## The following object is masked _by_ .GlobalEnv:
+## 
+##     X
+## 
+## The following objects are masked from d5:
+## 
+##     Cl.Quality, Cl.Quant, ContriICT, ContriNICT, D.E.De,
+##     Export.of.goods.and.services....of.GDP., GDP.Growth,
+##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, X, X.1
+## 
+## The following objects are masked from d4:
+## 
+##     Cl.Quality, Cl.Quant, ContriICT, ContriNICT, D.E.De,
+##     Export.of.goods.and.services....of.GDP., GDP.Growth,
+##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, X, X.1</code></pre>
+<pre class="r"><code>d5$X&lt;-NULL
+# Defining dependent and indenpendt variable
+Y4 &lt;- cbind(d5$GDP.Growth)
+X4 &lt;- cbind(d5$ContriICT, d5$ContriNICT)
+# Descriptive statistics
+summary(Y4)</code></pre>
+<pre><code>##        V1         
+##  Min.   :-11.426  
+##  1st Qu.:  1.793  
+##  Median :  3.931  
+##  Mean   :  3.354  
+##  3rd Qu.:  5.565  
+##  Max.   : 10.148</code></pre>
+<pre class="r"><code>summary(X4)</code></pre>
+<pre><code>##        V1                  V2         
+##  Min.   :-0.003895   Min.   :-1.0760  
+##  1st Qu.: 0.404869   1st Qu.: 0.9215  
+##  Median : 0.613752   Median : 1.5248  
+##  Mean   : 0.722123   Mean   : 1.6892  
+##  3rd Qu.: 0.924292   3rd Qu.: 2.2489  
+##  Max.   : 2.561978   Max.   : 5.0004</code></pre>
+<pre class="r"><code># Set data as pannel data
+pdata &lt;- plm.data(d5,index=c(&quot;D.E.De&quot;, &quot;X.1&quot;))</code></pre>
+<pre><code>## serie D.E.De  is constant and has been removed</code></pre>
+<pre class="r"><code># Pooled OLS Estimater 
+pooling &lt;- plm(Y4 ~ X4, data=pdata, model= &quot;pooling&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(pooling)</code></pre>
+<pre><code>## Oneway (individual) effect Pooling Model
+## 
+## Call:
+## plm(formula = Y4 ~ X4, data = pdata, model = &quot;pooling&quot;)
+## 
+## Unbalanced Panel: n=16, T=18-18, N=288
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -13.100  -1.260   0.451   2.010   8.290 
+## 
+## Coefficients :
+##             Estimate Std. Error t-value  Pr(&gt;|t|)    
+## (Intercept)  0.72337    0.42587  1.6986  0.090491 .  
+## X41          1.19629    0.40872  2.9269  0.003699 ** 
+## X42          1.04567    0.16753  6.2418 1.563e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    3595.1
+## Residual Sum of Squares: 3027.1
+## R-Squared      :  0.15801 
+##       Adj. R-Squared :  0.15636 
+## F-statistic: 26.741 on 2 and 285 DF, p-value: 2.2729e-11</code></pre>
+<pre class="r"><code># Putting control variable for Export % of GDP
+Y5 &lt;- cbind(d5$GDP.Growth)
+X5 &lt;- cbind(d5$ContriICT, d5$ContriNICT, d5$Export.of.goods.and.services....of.GDP.)
+# Pooled OLS Esitmater with control variable for developed countries 
+pooling &lt;- plm(Y5 ~ X5, data=pdata, model= &quot;pooling&quot;)</code></pre>
+<pre><code>## series D.E.De is constant and has been removed</code></pre>
+<pre class="r"><code>summary(pooling)</code></pre>
+<pre><code>## Oneway (individual) effect Pooling Model
+## 
+## Call:
+## plm(formula = Y5 ~ X5, data = pdata, model = &quot;pooling&quot;)
+## 
+## Unbalanced Panel: n=16, T=18-18, N=288
+## 
+## Residuals :
+##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+## -13.100  -1.080   0.499   1.870   8.620 
+## 
+## Coefficients :
+##              Estimate Std. Error t-value  Pr(&gt;|t|)    
+## (Intercept) 0.0884727  0.5321355  0.1663  0.868071    
+## X51         1.0689291  0.4117564  2.5960  0.009922 ** 
+## X52         1.0902521  0.1682095  6.4815 4.004e-10 ***
+## X53         0.0160406  0.0081328  1.9723  0.049542 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Total Sum of Squares:    3595.1
+## Residual Sum of Squares: 2986.2
+## R-Squared      :  0.16938 
+##       Adj. R-Squared :  0.16703 
+## F-statistic: 19.3048 on 3 and 284 DF, p-value: 2.0248e-11</code></pre>
 </div>
 
 

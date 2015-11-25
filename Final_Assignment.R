@@ -1,12 +1,3 @@
----
-title: "Impact of ICT on GDP growth in Developed, Developing and Emerging countries"
-author: "Alessia and Nitij"
-date: "20 November 2015"
-output: html_document
----
-# Impact of ICT on GDP growth in Developed, Developing and Emerging Countries
-
-```{r}
 #Uploading the data set
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 #Creating separate table for developed countries
@@ -57,9 +48,6 @@ pdata <- plm.data(d4,index=c("D.E.De", "X.1"))
 # Pooled OLS Estimater 
 pooling <- plm(Y ~ X, data=pdata, model= "pooling")
 summary(pooling)
-# Fixed effect modeling 
-fixed <- plm(Y ~ X, data=pdata, model= "within")
-summary(fixed)
 # Putting control variable for Export % of GDP
 Y1 <- cbind(d4$GDP.Growth)
 X1 <- cbind(d4$ContriICT, d4$ContriNICT, d4$Export.of.goods.and.services....of.GDP.)
@@ -108,4 +96,3 @@ X5 <- cbind(d5$ContriICT, d5$ContriNICT, d5$Export.of.goods.and.services....of.G
 # Pooled OLS Esitmater with control variable for developed countries 
 pooling <- plm(Y5 ~ X5, data=pdata, model= "pooling")
 summary(pooling)
-```
