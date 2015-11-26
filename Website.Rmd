@@ -2,11 +2,11 @@
 title: "Impact of ICT on GDP growth in Developed, Developing and Emerging countries"
 author: "Alessia and Nitij"
 date: "20 November 2015"
-output: html_document
+output: pdf_document
 ---
 # Impact of ICT on GDP growth in Developed, Developing and Emerging Countries
 
-```{r}
+```{r, echo=FALSE}
 #Uploading the data set
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 #Creating separate table for developed countries
@@ -37,6 +37,6 @@ d3$X<-NULL
 d3$X.1<-NULL
 #Summary statistics of Developing countries 
 summary(d3)
+
 ```
-library(googleVis))
 
