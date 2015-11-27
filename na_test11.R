@@ -1,13 +1,4 @@
----
-title: "Impact of ICT on GDP growth in Developed, Developing and Emerging countries"
-author: "Alessia and Nitij"
-date: "20 November 2015"
-output: pdf_document
----
-# Impact of ICT on GDP growth in Developed, Developing and Emerging Countries
-
-```{r, echo=FALSE}
-#Uploading the data set
+#Uploading the data set###
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 ########################
 #Descriptive Statistics########
@@ -80,9 +71,47 @@ library(plm)
 qplot(d1$X.1,d1$ContriICT)
 j <- ggplot(subset(d,d$D.E.De==1), aes(x = X.1, y = ContriICT))
 j<-j +  geom_point() 
-
 j<-j + facet_wrap(~ X) +theme_economist()
-
-
-```
+j
+# Attaching data set for emerging countrie
+attach(d5)
+d5$X<-NULL
+# Defining dependent and indenpendt variable
+Y2 <- cbind(d5$GDP.Growth)
+X2 <- cbind(d5$ContriICT, d5$ContriNICT)
+# Descriptive statistics
+summary(Y2)
+summary(X2)
+# Set data as pannel data
+pdata <- plm.data(d5,index=c("D.E.De", "X.1"))
+# Pooled OLS Estimater 
+pooling <- plm(Y2 ~ X2, data=pdata, model= "pooling")
+summary(pooling)
+# Putting control variable for Export % of GDP
+Y3 <- cbind(d5$GDP.Growth)
+X3 <- cbind(d5$ContriICT, d5$ContriNICT, d5$Export.of.goods.and.services....of.GDP.)
+# Pooled OLS Esitmater with control variable for developed countries 
+pooling <- plm(Y3 ~ X3, data=pdata, model= "pooling")
+summary(pooling)
+# Attaching data set for developing countries
+d6<-subset(d,d$D.E.De == 3)
+attach(d6)
+d6$X<-NULL
+# Defining dependent and indenpendt variable
+Y4 <- cbind(d6$GDP.Growth)
+X4 <- cbind(d6$ContriICT, d6$ContriNICT)
+# Descriptive statistics
+summary(Y4)
+summary(X4)
+# Set data as pannel data
+pdata <- plm.data(d6,index=c("D.E.De", "X.1"))
+# Pooled OLS Estimater 
+pooling <- plm(Y4 ~ X4, data=pdata, model= "pooling")
+summary(pooling)
+# Putting control variable for Export % of GDP
+Y5 <- cbind(d6$GDP.Growth)
+X5 <- cbind(d6$ContriICT, d6$ContriNICT, d6$Export.of.goods.and.services....of.GDP.)
+# Pooled OLS Esitmater with control variable for developed countries 
+pooling <- plm(Y5 ~ X5, data=pdata, model= "pooling")
+summary(pooling)
 
