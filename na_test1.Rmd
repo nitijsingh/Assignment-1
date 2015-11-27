@@ -6,7 +6,7 @@ output: pdf_document
 ---
 
 
-```{r}
+```{r, include=FALSE}
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 ########################
 #Descriptive Statistics########
@@ -74,6 +74,7 @@ summary(pool)
 #### Installing GGP Plots and GG Themes #######
 library(ggplot2)
 library(ggthemes)
+library(stargazer)
 qplot(d4$X.1,d4$ContriICT)
 j <- ggplot(subset(d,d$D.E.De==1), aes(x = X.1, y = ContriICT))
 j<-j +  geom_point() 
@@ -105,5 +106,31 @@ k <- ggplot(subset(d,d$D.E.De==2), aes(x = X.1, y = ContriICT))
 k<-k +  geom_point() 
 k<-k + facet_wrap(~ X) +theme_economist()
 k
+# Attaching data set for developing countries
+d6<-subset(d,d$D.E.De == 3)
+attach(d6)
+d6$X<-NULL
+# Defining dependent and indenpendt variable
+Y4 <- cbind(d6$GDP.Growth)
+X4 <- cbind(d6$ContriICT, d6$ContriNICT)
+# Descriptive statistics
+summary(Y4)
+summary(X4)
+# Set data as pannel data
+pdata <- plm.data(d6,index=c("D.E.De", "X.1"))
+# Pooled OLS Estimater 
+pooling <- plm(Y4 ~ X4, data=pdata, model= "pooling")
+summary(pooling)
+# Putting control variable for Export % of GDP
+Y5 <- cbind(d6$GDP.Growth)
+X5 <- cbind(d6$ContriICT, d6$ContriNICT, d6$Export.of.goods.and.services....of.GDP.)
+# Pooled OLS Esitmater with control variable for developed countries 
+pooling <- plm(Y5 ~ X5, data=pdata, model= "pooling")
+summary(pooling)
+```
+
+```{r results='asis'}
+stargazer(pooling, type = 'latex',
+          covariate.labels =c('ICT', 'Non-ICT', 'Export % GDP'))
 ```
 
