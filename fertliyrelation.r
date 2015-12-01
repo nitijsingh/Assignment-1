@@ -39,26 +39,50 @@ hist(swiss$Agriculture, col = "red", main = 'Percentage of males involved in agr
 hist(swiss$Examination, col = "green", main = 'Percentage of draftees receving highest marks', xlab = 'Percentage of highest mark on army examination'  )
 
 # Creating boxplot for relation between Fertility and Percentage of males involved in Agriculture
-plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Infant Mortality and 
-    Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
+plot(swiss$Fertility, swiss$Agriculture, main = 'Relation b/w Fertility and Percentage of Males in Agriculture', xlab = 'Fertility', ylab = 'Percentage of male involved in Agriculture')
 
 # Checking corelation between Fertility and Agriculture 
 cor.test(swiss$Fertility, swiss$Agriculture)
 
-#############################################################
-#          Pearson's product-moment correlation
-#
-# data:  swiss$Fertility and swiss$Agriculture
-# t = 2.5316, df = 45, p-value = 0.01492
-# alternative hypothesis: true correlation is not equal to 0
-# 95 percent confidence interval:
-#  0.07334947 0.58130587
-# sample estimates:
-#  cor 
-# 0.3530792 
+# Creating GGPlot for Fertility and Agriculture 
+ggplot(swiss,aes(Fertility,Agriculture)) + geom_smooth()
+
+###############################################################
+#          Pearson's product-moment correlation               #
+#                                                             #
+# data:  swiss$Fertility and swiss$Agriculture                #
+# t = 2.5316, df = 45, p-value = 0.01492                      #
+# alternative hypothesis: true correlation is not equal to 0  #
+# 95 percent confidence interval:                             #
+#  0.07334947 0.58130587                                      #
+# sample estimates:                                           #
+#  cor                                                        #
+# 0.3530792                                                   #
 ###############################################################
 #############################################################
 
 #############################################################
-# Explaining the results of correlation             
-# There is a postive
+# Explaining the results of correlation                     #
+# There is a postive effect of percentage of males employed #
+# on the fertility rate                                     # 
+#############################################################
+source("cor.R")
+# Creating GGPlot in order to explain the corelation between fertility and army
+ggplot(swiss,aes(Fertility,Examination)) + geom_point()
+
+
+######################
+# Explaining the results
+# We observe a negative relationship between fertility and marks obtained in army
+# there we have say that more people in the army will lead to low fertility rates 
+# data:  swiss$Fertility and swiss$Examination
+#t = -5.6753, df = 45, p-value = 9.45e-07
+#alternative hypothesis: true correlation is not equal to 0
+#95 percent confidence interval:
+#  -0.7870674 -0.4403995
+# sample estimates:
+#  cor 
+# -0.6458827 
+# Hence it proves our hypothesis that occupation has an effect on the Fertility.
+######################
+
