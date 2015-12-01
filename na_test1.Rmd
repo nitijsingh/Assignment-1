@@ -6,39 +6,33 @@ output: pdf_document
 ---
 
 
-```{r, include=FALSE}
+```{r, include=TRUE, echo=FALSE, message=FALSE,cache=FALSE,warning=FALSE,error=FALSE}
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 ########################
 #Descriptive Statistics########
 #######################
 #Creating separate table for developed countries
 d1<-subset(d,d$D.E.De == 1)
-#View the new table
-View(d1)
+d2<-subset(d,d$D.E.De == 2)
+d3<-subset(d,d$D.E.De == 3)
 # Dropping the variable country name
 d1$X<-NULL
 # Dropping the variable years
 d1$X.1<-NULL
-#Summary Statisitc of Developed Countries
-summary(d1)
-#Creating separate table for emerging countries
-d2<-subset(d,d$D.E.De == 2)
-#Viewing the new table
-View(d2)
+# Dropping dummy variable
+d1$D.E.De<-NULL
 #Dropping the variable country name
 d2$X<-NULL
 #Dropping the variable years
 d2$X.1<-NULL
-##Summary statisitc of Emerging Countries
-summary(d2)
-#Creating separate table for developing countries
-d3<-subset(d,d$D.E.De == 3)
+#Dropping the dummy variable
+d2$D.E.De<-NULL
 #Dropping the variables country name
 d3$X<-NULL
 #Dropping the variable year
 d3$X.1<-NULL
-#Summary statistics of Developing countries 
-summary(d3)
+#Dropping dummy variable
+d3$D.E.De<-NULL
 ############################
 ####### Modelling###########
 #Installing plm package
@@ -57,24 +51,19 @@ d4$X<-NULL
 Y <- cbind(d4$GDP.Growth)
 X <- cbind(d4$ContriICT, d4$ContriNICT)
 # Descriptive statistics
-summary(Y)
-summary(X)
 # Set data as pannel data
 pdata <- plm.data(d4,index=c("D.E.De", "X.1"))
 # Pooled OLS Estimater 
 pooling <- plm(Y ~ X, data=pdata, model= "pooling")
-summary(pooling)
 # Putting control variable for Export % of GDP
 Y1 <- cbind(d4$GDP.Growth)
 X1 <- cbind(d4$ContriICT, d4$ContriNICT, d4$Export.of.goods.and.services....of.GDP.)
 # Pooled OLS Esitmater with control variable for developed countries 
-pool <- plm(Y1 ~ X1, data=pdata, model= "pool")
-summary(pool)
+pooling1 <- plm(Y1 ~ X1, data=pdata, model= "pool")
 ########### Visualization######################
 #### Installing GGP Plots and GG Themes #######
 library(ggplot2)
 library(ggthemes)
-library(stargazer)
 qplot(d4$X.1,d4$ContriICT)
 j <- ggplot(subset(d,d$D.E.De==1), aes(x = X.1, y = ContriICT))
 j<-j +  geom_point() 
@@ -93,14 +82,12 @@ summary(X2)
 # Set data as pannel data
 pdata <- plm.data(d5,index=c("D.E.De", "X.1"))
 # Pooled OLS Estimater 
-pooling <- plm(Y2 ~ X2, data=pdata, model= "pooling")
-summary(pooling)
+pooling2 <- plm(Y2 ~ X2, data=pdata, model= "pooling")
 # Putting control variable for Export % of GDP
 Y3 <- cbind(d5$GDP.Growth)
 X3 <- cbind(d5$ContriICT, d5$ContriNICT, d5$Export.of.goods.and.services....of.GDP.)
-# Pooled OLS Esitmater with control variable for developed countries 
-pooling <- plm(Y3 ~ X3, data=pdata, model= "pooling")
-summary(pooling)
+# Pooled OLS Esitmater with control variable for emerging countries 
+pooling3 <- plm(Y3 ~ X3, data=pdata, model= "pooling")
 qplot(d5$X.1,d5$ContriICT)
 k <- ggplot(subset(d,d$D.E.De==2), aes(x = X.1, y = ContriICT))
 k<-k +  geom_point() 
@@ -119,18 +106,20 @@ summary(X4)
 # Set data as pannel data
 pdata <- plm.data(d6,index=c("D.E.De", "X.1"))
 # Pooled OLS Estimater 
-pooling <- plm(Y4 ~ X4, data=pdata, model= "pooling")
-summary(pooling)
+pooling4 <- plm(Y4 ~ X4, data=pdata, model= "pooling")
 # Putting control variable for Export % of GDP
 Y5 <- cbind(d6$GDP.Growth)
 X5 <- cbind(d6$ContriICT, d6$ContriNICT, d6$Export.of.goods.and.services....of.GDP.)
 # Pooled OLS Esitmater with control variable for developed countries 
-pooling <- plm(Y5 ~ X5, data=pdata, model= "pooling")
-summary(pooling)
+pooling5 <- plm(Y5 ~ X5, data=pdata, model= "pooling")
 ```
 
-```{r results='asis'}
-stargazer(pooling, type = 'latex',
-          covariate.labels =c('ICT', 'Non-ICT', 'Export % GDP'))
+```{r, results='asis', echo= FALSE}
+library(stargazer,quietly = TRUE)
+stargazer(d1, summary = TRUE,title = "Descriptive Stats", header=FALSE)
+stargazer(d2, summary = TRUE,title = "Descriptive Stats", header=FALSE)
+stargazer(d3, summary = TRUE,title = "Descriptive Stats", header=FALSE)
+stargazer(pooling1, pooling3, pooling5, type = 'latex', header = F,
+          dep.var.labels =c('Developed', 'Emerging' , 'Developing') ,covariate.labels =c('ICT', 'Non-ICT', 'Export % GDP','ICT', 'Non-ICT', 'Export % GDP','ICT', 'Non-ICT', 'Export % GDP'))
 ```
 
