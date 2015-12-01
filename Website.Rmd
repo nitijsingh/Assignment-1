@@ -80,9 +80,6 @@ library(plm)
 qplot(d1$X.1,d1$ContriICT)
 j <- ggplot(subset(d,d$D.E.De==1), aes(x = X.1, y = ContriICT))
 j<-j +  geom_point() 
-
 j<-j + facet_wrap(~ X) +theme_economist()
-
-
 ```
 
