@@ -103,13 +103,13 @@ summary(d1)</code></pre>
 ##  Mean   :0.54836   Mean   : 0.7778  
 ##  3rd Qu.:0.73754   3rd Qu.: 0.9742  
 ##  Max.   :1.32499   Max.   : 3.0919  
-##  Export.of.goods.and.services....of.GDP.
-##  Min.   : 9.038                         
-##  1st Qu.:25.354                         
-##  Median :36.226                         
-##  Mean   :36.643                         
-##  3rd Qu.:44.418                         
-##  Max.   :96.588</code></pre>
+##  Export.of.goods.and.services....of.GDP.    Popgrwth      
+##  Min.   : 9.038                          Min.   :-0.2534  
+##  1st Qu.:25.354                          1st Qu.: 0.2963  
+##  Median :36.226                          Median : 0.5412  
+##  Mean   :36.643                          Mean   : 0.6513  
+##  3rd Qu.:44.418                          3rd Qu.: 0.9261  
+##  Max.   :96.588                          Max.   : 2.8910</code></pre>
 <pre class="r"><code>#Creating separate table for emerging countries
 d2&lt;-subset(d,d$D.E.De == 2)
 #Viewing the new table
@@ -141,13 +141,13 @@ summary(d2)</code></pre>
 ##  Mean   : 0.722123   Mean   : 1.6892  
 ##  3rd Qu.: 0.924292   3rd Qu.: 2.2489  
 ##  Max.   : 2.561978   Max.   : 5.0004  
-##  Export.of.goods.and.services....of.GDP.
-##  Min.   :  6.706                        
-##  1st Qu.: 23.967                        
-##  Median : 33.846                        
-##  Mean   : 40.620                        
-##  3rd Qu.: 53.078                        
-##  Max.   :121.312</code></pre>
+##  Export.of.goods.and.services....of.GDP.    Popgrwth       
+##  Min.   :  6.706                         Min.   :-1.91102  
+##  1st Qu.: 23.967                         1st Qu.: 0.06508  
+##  Median : 33.846                         Median : 1.13137  
+##  Mean   : 40.620                         Mean   : 0.88943  
+##  3rd Qu.: 53.078                         3rd Qu.: 1.53684  
+##  Max.   :121.312                         Max.   : 2.56440</code></pre>
 <pre class="r"><code>#Creating separate table for developing countries
 d3&lt;-subset(d,d$D.E.De == 3)
 #Dropping the variables country name
@@ -177,13 +177,13 @@ summary(d3)</code></pre>
 ##  Mean   : 0.77307   Mean   : 2.0708  
 ##  3rd Qu.: 0.89637   3rd Qu.: 2.8490  
 ##  Max.   : 8.38740   Max.   : 6.3529  
-##  Export.of.goods.and.services....of.GDP.
-##  Min.   : 9.707                         
-##  1st Qu.:19.875                         
-##  Median :26.441                         
-##  Mean   :28.232                         
-##  3rd Qu.:35.669                         
-##  Max.   :56.506</code></pre>
+##  Export.of.goods.and.services....of.GDP.    Popgrwth    
+##  Min.   : 9.707                          Min.   :0.483  
+##  1st Qu.:19.875                          1st Qu.:1.360  
+##  Median :26.441                          Median :1.927  
+##  Mean   :28.232                          Mean   :1.978  
+##  3rd Qu.:35.669                          3rd Qu.:2.546  
+##  Max.   :56.506                          Max.   :3.879</code></pre>
 <pre class="r"><code>#Installing plm package 
 # Loading the pannel data package in the memory
 library(plm)</code></pre>
@@ -315,7 +315,8 @@ attach(d5)</code></pre>
 ## 
 ##     Cl.Quality, Cl.Quant, ContriICT, ContriNICT, D.E.De,
 ##     Export.of.goods.and.services....of.GDP., GDP.Growth,
-##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, X, X.1</code></pre>
+##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, Popgrwth, X,
+##     X.1</code></pre>
 <pre class="r"><code>d5$X&lt;-NULL
 # Defining dependent and indenpendt variable
 Y2 &lt;- cbind(d5$GDP.Growth)
@@ -411,13 +412,15 @@ attach(d6)</code></pre>
 ## 
 ##     Cl.Quality, Cl.Quant, ContriICT, ContriNICT, D.E.De,
 ##     Export.of.goods.and.services....of.GDP., GDP.Growth,
-##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, X, X.1
+##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, Popgrwth, X,
+##     X.1
 ## 
 ## The following objects are masked from d4:
 ## 
 ##     Cl.Quality, Cl.Quant, ContriICT, ContriNICT, D.E.De,
 ##     Export.of.goods.and.services....of.GDP., GDP.Growth,
-##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, X, X.1</code></pre>
+##     ICT.Capital, Lab.Qual, Lab.Quant, NICT.Capital, Popgrwth, X,
+##     X.1</code></pre>
 <pre class="r"><code>d5$X&lt;-NULL
 # Defining dependent and indenpendt variable
 Y4 &lt;- cbind(d5$GDP.Growth)
