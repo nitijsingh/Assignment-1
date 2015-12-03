@@ -106,3 +106,10 @@ Y5 <- cbind(d6$GDP.Growth)
 X5 <- cbind(d6$ContriICT, d6$ContriNICT, d6$Export.of.goods.and.services....of.GDP.)
 # Pooled OLS Esitmater with control variable for developed countries 
 pooling5 <- plm(Y5 ~ X5, data=pdata, model= "pooling")
+install.packages("googleVis")
+library(googleVis)
+df=data.frame(country=c("AU", "AT", "BE", "CA", "DK", "FI", "FR", "DE", "GB", "IT", "US"), 
+              ICTInvestment=c(0.524,0.6694,0.6895,0.8425,0.8010,0.533,0.234,0.979,0.2960,0.4706,0.4011), 
+              NonICTIvest=c(0.433,0.343,0.343,0.4242,0.4646,0.4532,1.3434,3.354534,0.434,1.43,2.453))
+Intensity <- gvisIntensityMap(df)
+plot(Intensity)
