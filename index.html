@@ -70,7 +70,18 @@ img {
 
 <div id="impact-of-ict-on-gdp-growth-in-developed-developing-and-emerging-countries" class="section level1">
 <h1>Impact of ICT on GDP growth in Developed, Developing and Emerging Countries</h1>
-<pre class="r"><code>#Uploading the data set
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>#Uploading the data set###
 d&lt;-read.csv(file = &quot;/Users/Nitij singh/Documents/gdpcoun.csv&quot;)
 #Creating separate table for developed countries
 d1&lt;-subset(d,d$D.E.De == 1)
@@ -187,7 +198,13 @@ summary(d3)</code></pre>
 <pre class="r"><code>#Installing plm package 
 # Loading the pannel data package in the memory
 library(plm)</code></pre>
-<pre><code>## Loading required package: Formula</code></pre>
+<pre><code>## Loading required package: Formula
+## 
+## Attaching package: 'plm'
+## 
+## The following object is masked from 'package:dplyr':
+## 
+##     between</code></pre>
 <pre class="r"><code># Loading the formula package in the memory 
 library(Formula)
 # Attaching data set for developed countries

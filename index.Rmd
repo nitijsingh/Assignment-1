@@ -7,7 +7,8 @@ output: html_document
 # Impact of ICT on GDP growth in Developed, Developing and Emerging Countries
 
 ```{r}
-#Uploading the data set
+library(dplyr)
+#Uploading the data set###
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 #Creating separate table for developed countries
 d1<-subset(d,d$D.E.De == 1)

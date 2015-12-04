@@ -1,12 +1,12 @@
 ---
-title: "Untitled"
+title: "Impact of ICT on economic development"
 author: "Alessia and Nitij"
 date: "27 November 2015"
 output: pdf_document
 ---
 
 
-```{r, include=TRUE, echo=FALSE, message=FALSE,cache=FALSE,warning=FALSE,error=FALSE}
+```{r, include=FALSE}
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
 ########################
 #Descriptive Statistics########
@@ -64,6 +64,10 @@ pooling1 <- plm(Y1 ~ X1, data=pdata, model= "pool")
 #### Installing GGP Plots and GG Themes #######
 library(ggplot2)
 library(ggthemes)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
 qplot(d4$X.1,d4$ContriICT)
 j <- ggplot(subset(d,d$D.E.De==1), aes(x = X.1, y = ContriICT))
 j<-j +  geom_point() 
@@ -77,8 +81,6 @@ d5$X<-NULL
 Y2 <- cbind(d5$GDP.Growth)
 X2 <- cbind(d5$ContriICT, d5$ContriNICT)
 # Descriptive statistics
-summary(Y2)
-summary(X2)
 # Set data as pannel data
 pdata <- plm.data(d5,index=c("D.E.De", "X.1"))
 # Pooled OLS Estimater 
@@ -101,8 +103,6 @@ d6$X<-NULL
 Y4 <- cbind(d6$GDP.Growth)
 X4 <- cbind(d6$ContriICT, d6$ContriNICT)
 # Descriptive statistics
-summary(Y4)
-summary(X4)
 # Set data as pannel data
 pdata <- plm.data(d6,index=c("D.E.De", "X.1"))
 # Pooled OLS Estimater 
@@ -114,7 +114,7 @@ X5 <- cbind(d6$ContriICT, d6$ContriNICT, d6$Export.of.goods.and.services....of.G
 pooling5 <- plm(Y5 ~ X5, data=pdata, model= "pooling")
 ```
 
-```{r, results='asis', echo= FALSE}
+```{r, results='asis', echo= FALSE, message=FALSE}
 library(stargazer,quietly = TRUE)
 stargazer(d1, summary = TRUE,title = "Descriptive Stats", header=FALSE)
 stargazer(d2, summary = TRUE,title = "Descriptive Stats", header=FALSE)
