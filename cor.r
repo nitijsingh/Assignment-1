@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+cor.test(swiss$Fertility, swiss$Examination)
+hello wordl
+=======
 # Creating boxplot for relation between Fertility and Percentage of males involved in Army
 library(ggplot2)
 
@@ -6,3 +10,4 @@ library(ggplot2)
 cor.test(swiss$Fertility,swiss$Examination)
 
 
+>>>>>>> origin/master

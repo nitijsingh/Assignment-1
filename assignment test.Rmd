@@ -1,15 +1,11 @@
 ---
-title: "Impact of ICT on GDP growth in Developed, Developing and Emerging countries"
+title: "Untitled"
 author: "Alessia and Nitij"
-date: "20 November 2015"
+date: "27 November 2015"
 output: pdf_document
----
-# Impact of ICT on GDP growth in Developed, Developing and Emerging Countries
-
-```{r, echo=FALSE}
-#Uploading the data set
+```{r}
+##Uploading the data set
 d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
-########################
 #Descriptive Statistics########
 #######################
 #Creating separate table for developed countries
@@ -77,9 +73,10 @@ summary(pool)
 library(ggplot2)
 library(ggthemes)
 library(plm)
-qplot(d1$X.1,d1$ContriICT)
+qplot(d4$GDP.Growth,d4$ContriICT)
 j <- ggplot(subset(d,d$D.E.De==1), aes(x = X.1, y = ContriICT))
 j<-j +  geom_point() 
-j<-j + facet_wrap(~ X) +theme_economist()
+j<-j + facet_wrap(~ X) +theme_bw()
+j
 ```
 

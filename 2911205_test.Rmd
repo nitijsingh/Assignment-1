@@ -1,0 +1,73 @@
+---
+title: "Untitled"
+author: "Alessia and Nitij"
+date: "29 November 2015"
+output: pdf_document
+---
+
+---
+title: "Untitled"
+author: "Alessia and Nitij"
+date: "27 November 2015"
+output: pdf_document
+---
+
+
+```{r, include=TRUE, echo=FALSE}
+d<-read.csv(file = "/Users/Nitij singh/Documents/gdpcoun.csv")
+########################
+#Descriptive Statistics########
+#######################
+#Creating separate table for developed countries
+d1<-subset(d,d$D.E.De == 1)
+
+```
+
+
+```{r, include=TRUE, echo=FALSE}
+# Dropping the variable country name
+d1$X<-NULL
+# Dropping the variable years
+d1$X.1<-NULL
+# Dropping dummy variable
+d1$D.E.De<-NULL
+```
+
+```{r, results='asis', echo=FALSE}
+#### Installing stargazer###
+library(stargazer,quietly = TRUE)
+stargazer(d1, summary = TRUE,title = "Descriptive Stats", header=FALSE)
+```
+
+```{r, include=TRUE, echo=FALSE}
+#Creating separate table for emerging countries
+d2<-subset(d,d$D.E.De == 2)
+#Dropping the variable country name
+d2$X<-NULL
+#Dropping the variable years
+d2$X.1<-NULL
+#Dropping the dummy variable
+d2$D.E.De<-NULL
+```
+
+```{r, results='asis', echo=FALSE}
+library(stargazer,quietly = TRUE)
+stargazer(d2, summary = TRUE,title = "Descriptive Stats", header=FALSE)
+```
+
+
+```{r, include=TRUE, echo=FALSE}
+#Creating separate table for developing countries
+d3<-subset(d,d$D.E.De == 3)
+#Dropping the variables country name
+d3$X<-NULL
+#Dropping the variable year
+d3$X.1<-NULL
+#Dropping dummy variable
+d3$D.E.De<-NULL
+```
+
+```{r, results='asis', echo=FALSE}
+library(stargazer,quietly = TRUE)
+stargazer(d3, summary = TRUE,title = "Descriptive Stats", header=FALSE)
+```
